@@ -82,7 +82,7 @@ class Swarm:
         }
         
         # Only use parallel_tool_calls if model is not "o3-mini".
-        if tools and model not in ["o3-mini"]:
+        if tools and model not in ["o3-mini", "o1"]:
             create_params["parallel_tool_calls"] = agent.parallel_tool_calls
 
         response =  self.client.chat.completions.create(**create_params)
